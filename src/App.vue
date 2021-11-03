@@ -1,12 +1,35 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+<div id="app">
+  <div id = "links">
+    <router-link to='/'>
+      <p>home page</p>
+    </router-link>
+    <router-link to='/music'>
+      <p>music page</p>
+    </router-link>
+    <router-link to='/list'>
+      <p>playlist page</p>
+    </router-link>
   </div>
+  <router-view />
+  <hr/>
+
+  <div class='footer'>
+    <div class='footer-item'>
+      <a href ='https://github.com/JadenJohnson227/music-project'>Github repository</a>
+
+    </div>
+  </div>
+</div>
 </template>
+
+<script>
+export default{
+  name: 'App',
+  
+}
+
+</script>
 
 <style>
 #app {

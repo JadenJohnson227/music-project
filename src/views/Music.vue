@@ -1,15 +1,17 @@
 <template>
-  <div>
-    <p>Home page</p>
-    <SongList :songs="songs"/>
+  <div class = "music">
+    <p>Music page</p>
+    <SongList :songs="songs" />
   </div>
+
+
 </template>
 
 <script>
   import SongList from "../components/SongList.vue"
   export default{
-    name: 'Home',
-    components: {
+    name: "Music",
+    components:{
       SongList
     },
     data(){
