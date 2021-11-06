@@ -6,6 +6,11 @@ import mock from './mock-data.js'
 let data = {
   songs: mock,
   playlist: [],
+  nowPlaying: {
+    id: 0,
+    name: "",
+    artist: "",
+  },
   addSong(id){
     this.playlist.push(id);
   },

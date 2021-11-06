@@ -1,6 +1,6 @@
 <template>
   <div class = "playlist">
-    <p>Playlist page</p>
+    <h1>Playlist page</h1>
     <PlayList :items="items"/>
   </div>
 

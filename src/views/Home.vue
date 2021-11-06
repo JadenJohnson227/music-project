@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Home page</p>
+    <h1>Home page</h1>
     <SongList :songs="songs"/>
   </div>
 </template>

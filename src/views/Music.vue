@@ -1,10 +1,8 @@
 <template>
   <div class = "music">
-    <p>Music page</p>
+    <h1>Music page</h1>
     <SongList :songs="songs" />
   </div>
-
-
 </template>
 
 <script>

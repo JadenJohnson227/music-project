@@ -1,21 +1,22 @@
 <template>
 <div class="wrapper">
-  <div class="items">
     <div class="item" v-for="item in items" :key="item.id">
-      <div class="info">
+      <div class="title">
         <h1>{{item.name}}</h1>
-
       </div>
       <div class="artist">
         <h2>{{item.artist}}</h2>
       </div>
-      <div class="playlist">
-
-        <form @submit.prevent="removeSong(item)">
-          <button class="auto">Remove from PlayList</button>
+      <div class="playNow">
+        <form @submit.prevent="playSong(item)">
+          <button class="auto">Play Song</button>
         </form>
       </div>
-    </div>
+      <div class="remove">
+        <form @submit.prevent="removeSong(item)">
+          <button class="auto">X</button>
+        </form>
+      </div>
   </div>
 </div>
 </template>
@@ -29,79 +30,89 @@ export default {
   methods:{
     removeSong(item){
       this.$root.$data.removeSong(item);
+    },
+    playSong(song) {
+      this.$root.$data.nowPlaying = song;
+      this.$root.$router.push({path: '/playing'});
+    },
 
-    }
   },
-  
 }
 </script>
 
 <style scoped>
 .wrapper {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  width: 75%;
+  margin: auto;
 }
 
-.products {
+.item {
   margin-top: 20px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.product {
-  margin: 10px;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #42464C; /* Charcoal (lighter Gray) */
+  padding: 10px;
+  margin: auto;
   margin-top: 50px;
-  width: 200px;
 }
 
-.product img {
-  border: 2px solid #333;
-  height: 250px;
-  width: 200px;
-  object-fit: cover;
+.title .artist .playNow .remove {
+  margin: 10px;
 }
 
-.product .image {
+.title {
   display: flex;
-  justify-content: center;
-  margin-bottom: 5px;
-}
-
-.info {
+  flex-direction: column;
   background: #F2921D;
   color: #000;
-  padding: 10px 30px;
+  padding: 15px;
   height: 80px;
+  width: 100%;
 }
 
-.info h1 {
-  font-size: 16px;
+.title h1 {
+  margin: auto;
+  align-self: center;
+  font-size: 30px;
 }
 
-.info h2 {
-  font-size: 14px;
-}
-
-.info p {
+.title p {
   margin: 0px;
   font-size: 10px;
 }
 
-
-.price {
+.artist {
   display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.artist h2 {
+  font-size: 24px;
 }
 
 button {
+  border-radius: 5px;
   height: 50px;
   background: #000;
   color: white;
   border: none;
 }
 
+.playNow button {
+  background: #63A375; /* Forest Green Crayola */
+}
+
 .auto {
   margin-left: auto;
+  padding: 10px;
 }
 </style>

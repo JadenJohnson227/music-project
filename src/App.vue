@@ -1,55 +1,70 @@
 <template>
-<div id="app">
-  <div id = "links">
-    <router-link to='/'>
-      <p>home page</p>
-    </router-link>
-    <router-link to='/music'>
-      <p>music page</p>
-    </router-link>
-    <router-link to='/list'>
-      <p>playlist page</p>
-    </router-link>
-  </div>
-  <router-view />
-  <hr/>
-
-  <div class='footer'>
-    <div class='footer-item'>
-      <a href ='https://github.com/JadenJohnson227/music-project'>Github repository</a>
-
+  <div id = "app">
+    <div class = "menue">
+      <router-link to='/'>
+        <p>Home</p>
+      </router-link>
+      <router-link to='/playing'>
+        <p>Now Playing</p>
+      </router-link>
+      <router-link to='/music'>
+        <p>Music</p>
+      </router-link>
+      <router-link to = '/list'>
+        <p>Playlist</p>
+      </router-link>
+    </div>
+    <router-view/>
+    <hr/>
+    <div class = 'footer'>
+        <a href='https://github.com/JadenJohnson227/music-project'>Github repository</a>
     </div>
   </div>
-</div>
 </template>
 
 <script>
-export default{
-  name: 'App',
-  
+  export default{
+    name: 'App',
 }
-
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  #app {
+    --raisin-black: #26282c;  /* background black */
+    --tangerine: #f58b00;     /* tangerine */
+    --platinum: #eaebec;      /* off whitSe */
+    --forest-green: #63A375;  /* pastel green */
 
-#nav {
-  padding: 30px;
-}
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+    color: var(--platinum);
+    background-color: var(--raisin-black);
+  }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  #app p {
+    text-decoration-style: none;
+    font-size: 20px;
+    color: var(--tangerine);
+  }
+
+  .menue {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    text-decoration: none;
+    color: var(--tangerine);
+  }
+
+  .footer {
+    padding: 20px;
+  }
+
+  .footer a {
+    color: var(--forest-green);
+  }
+
 </style>
