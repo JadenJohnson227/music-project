@@ -7,9 +7,12 @@
       <router-link to='/playing'>
         <p>Now Playing</p>
       </router-link>
+      <!-- took out the music page since it was the same as the
+      home page and didn't need it
       <router-link to='/music'>
         <p>Music</p>
       </router-link>
+      -->
       <router-link to = '/list'>
         <p>Playlist</p>
       </router-link>
