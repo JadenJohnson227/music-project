@@ -1,7 +1,12 @@
 <template>
   <div class = "playlist">
     <h1>Playlist page</h1>
-    <PlayList :items="items"/>
+    <div v-if="this.$root.$data.playlist.length === 0">
+      <h2>Your playlist is empty!</h2>
+    </div>
+    <div v-else>
+      <PlayList :items="items"/>
+    </div>
   </div>
 
 
